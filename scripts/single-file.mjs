@@ -17,7 +17,7 @@ const css = readFileSync(join(out, 'assets', byExt('.css')), 'utf8')
 
 // asset() minifies to e=>`./images/${e}`: make it the identity, then embed each file.
 const before = js
-js = js.replace(/`\.\/images\/\$\{(\w+)\}`/, '$1')
+js = js.replace(/`(?:\.\/|\$\{\w+\})images\/\$\{(\w+)\}`/, '$1')
 if (js === before) throw new Error('image URL construction not found')
 
 // Every replacement below is a function: the bundle is full of $ sequences
