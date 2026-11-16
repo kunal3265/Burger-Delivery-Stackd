@@ -9,7 +9,8 @@
     "build:offline": "vite build --config vite.config.offline.ts",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "build:single": "vite build --config vite.config.offline.ts && node scripts/single-file.mjs"
+    "build:single": "vite build --config vite.config.offline.ts && node scripts/single-file.mjs",
+    "build:vercel": "vite build --config vite.config.vercel.ts"
   },
   "dependencies": {
     "hono": "^4.13.0",

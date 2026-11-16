@@ -6,7 +6,10 @@
 // Photography. Every image goes through this map: swap a path for your own
 // photo (same aspect ratio) and the whole site follows.
 
-const asset = (file: string) => `${import.meta.env.BASE_URL}images/${file}`
+// BASE_URL is './' in the file:// build and '/' everywhere else; some bundlers
+// (the Vercel edge function) leave import.meta.env undefined, hence the fallback.
+const BASE = import.meta.env?.BASE_URL ?? '/'
+const asset = (file: string) => `${BASE}images/${file}`
 
 export const IMAGES = {
   storefront: asset('storefront.webp'),
