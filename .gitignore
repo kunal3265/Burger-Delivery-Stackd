@@ -7,5 +7,3 @@ offline
 !.dev.vars.example
 .DS_Store
 *.log
-.freebuff
-Stackd.html
